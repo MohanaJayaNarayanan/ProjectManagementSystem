@@ -1,5 +1,9 @@
 package com.solution.enums;
 
+
+/** This documents criticality of the project
+ *
+ */
 public enum ProjectType {
 
     HIGHPRIORITY("HIGHPRIORITY"),LOWPRIORITY("LOWPRIORITY"), CRITICALPRIORITY("CRITICALPRIORITY");

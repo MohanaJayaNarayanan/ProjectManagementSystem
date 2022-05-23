@@ -1,12 +1,13 @@
 package com.solution.model;
 
 import com.solution.enums.Status;
-import com.solution.enums.UserType;
-
 import java.util.Date;
 import java.util.List;
 
 
+/**
+ * This class contains the attributes of the resource Task model
+ */
 public class Task {
 
     Long taskId;

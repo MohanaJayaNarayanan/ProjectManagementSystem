@@ -1,5 +1,8 @@
 package com.solution.enums;
 
+/**This documents the resources to be used
+ *
+ */
 public enum ResourceType {
 
     CRANE("CRANE"),BRICKHAMMER("BRICKHAMMER"), BATTERYDRILL("BATTERYDRILL"), PLUMBINGMACHINE("PLUMBINGMACHINE"),

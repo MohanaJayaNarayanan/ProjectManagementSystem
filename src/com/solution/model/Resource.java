@@ -2,6 +2,9 @@ package com.solution.model;
 
 import com.solution.enums.ResourceType;
 
+/**
+ * This class contains the attributes of the resource data model
+ */
 public class Resource {
 
     Long resourceId;

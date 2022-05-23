@@ -2,6 +2,9 @@ package com.solution.model;
 
 import com.solution.enums.UserType;
 
+/**
+ * This class contains the attributes of the resource User model
+ */
 public class User {
 
     Long userId;

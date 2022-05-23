@@ -10,15 +10,39 @@ import com.solution.model.Task;
 import com.solution.model.User;
 import com.solution.service.ProjectService;
 
-import java.time.LocalDate;
-import java.time.ZoneId;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+/**
+ *  This class contains the actual entry point which collects enddate for calculating the project feasibility and initializes new project
+ *
+ */
 public class ProjectStartup {
 
-    public static void main(String[] args) {
+    /**Entry point to the application which takes enddate as commandline argument and invokes the project completability function
+     *
+     * @param args
+     * @throws Exception
+     */
+    public static void main(String[] args) throws Exception {
+
+        System.out.println("Enter the end date for the completion of project in dd/MM/yyyy format: "+args[0]);
+
+        Date date = new Date();
+        SimpleDateFormat formatter = new SimpleDateFormat(args[0]);
+        String endDateValue = formatter.format(date);
+
+        Date endDate= null;
+        try {
+            endDate = new SimpleDateFormat("dd/MM/yyyy").parse(endDateValue);
+        } catch (ParseException e) {
+            System.out.println("Incorrect Date Format");
+            throw new Exception(e.getMessage());
+        }
+
         Project project = new Project(1l,"StandardProject", ProjectType.HIGHPRIORITY,"Adminuser", Status.NEW);
 
         List<Task> taskList = project.getTasks();
@@ -74,13 +98,18 @@ public class ProjectStartup {
         System.out.println(project);
 
         ProjectService projectService = new ProjectService();
-        LocalDate localDate = LocalDate.of(2022,06,15);
-        Date endDate = Date.from(localDate.atStartOfDay(ZoneId.systemDefault()).toInstant());
 
-        boolean isProjectCompleteable = projectService.isProjectCompletable(endDate);
+        boolean isProjectCompleteable = projectService.isProjectCompletable(endDate,project);
         System.out.println("Is project can be completed in the given date "+endDate + " :: " +isProjectCompleteable);
     }
 
+    /**
+     *Initializes and create the object for resource based on task type
+     *
+     * @param constructionWork
+     * @param resource
+     * @return
+     */
     private static Resource initializeResource(String constructionWork, Resource resource) {
         if (constructionWork.equalsIgnoreCase("ConstructionWork")) {
             resource = new Resource(1l,"BLUESTAR CRANE", ResourceType.CRANE,5000.00,true);
@@ -103,6 +132,12 @@ public class ProjectStartup {
         return resource;
     }
 
+    /**
+     * Initializes and create the object for user based on task type
+     * @param constructionWork
+     * @param user
+     * @return
+     */
     private static User initializeUser(String constructionWork, User user) {
         if(constructionWork.equalsIgnoreCase("ConstructionWork")) {
            user = new User(1l,"CRANE OPERATOR",UserType.CONSTRUCTIONWORKER,1500.00);

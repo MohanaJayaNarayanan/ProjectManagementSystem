@@ -9,6 +9,9 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * This class contains the attributes of the Project data model
+ */
 public class Project {
 
     Long projectId;
@@ -44,10 +47,6 @@ public class Project {
         return taskDetails;
     }
 
-    public boolean isProjectCompletable(Date deadlineDate)
-    {
-            return false;
-    }
 
     @Override
     public String toString() {
