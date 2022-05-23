@@ -140,24 +140,24 @@ public class ProjectStartup {
      */
     private static User initializeUser(String constructionWork, User user) {
         if(constructionWork.equalsIgnoreCase("ConstructionWork")) {
-           user = new User(1l,"CRANE OPERATOR",UserType.CONSTRUCTIONWORKER,1500.00);
+           user = new User(1l,"CRANE OPERATOR",UserType.CONSTRUCTIONWORKER,1500.00,true);
         }
         else if(constructionWork.equalsIgnoreCase("MasonWork")) {
-            user = new User(2l,"admin",UserType.MASON,1000.00);
+            user = new User(2l,"admin",UserType.MASON,1000.00,true);
         }
         else if(constructionWork.equalsIgnoreCase("PlumbingWork")) {
-            user = new User(3l,"admin",UserType.PLUMBER,3500.00);
+            user = new User(3l,"admin",UserType.PLUMBER,3500.00,true);
         }
 
         else if(constructionWork.equalsIgnoreCase("WeldingWork")) {
-            user = new User(4l,"admin",UserType.WELDER,2500.00);
+            user = new User(4l,"admin",UserType.WELDER,2500.00,true);
         }
 
         else if(constructionWork.equalsIgnoreCase("ElectricWork")) {
-            user = new User(5l,"admin",UserType.ELECTRICIAN,1500.00);
+            user = new User(5l,"admin",UserType.ELECTRICIAN,1500.00,true);
         }
         else if(constructionWork.equalsIgnoreCase("CarpentarWork")) {
-            user = new User(6l,"admin",UserType.CARPENTER,3000.00);
+            user = new User(6l,"admin",UserType.CARPENTER,3000.00,true);
         }
         return user;
     }

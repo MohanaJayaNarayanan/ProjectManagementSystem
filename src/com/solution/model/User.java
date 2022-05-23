@@ -11,12 +11,22 @@ public class User {
     String userName;
     UserType userType;
     Double salary;
+    boolean isAvailable;
 
-    public User(Long userId, String userName, UserType userType, Double salary) {
+    public User(Long userId, String userName, UserType userType, Double salary,boolean isAvailable) {
         this.userId = userId;
         this.userName = userName;
         this.userType = userType;
         this.salary = salary;
+        this.isAvailable = isAvailable;
+    }
+
+    public boolean isAvailable() {
+        return isAvailable;
+    }
+
+    public void setAvailable(boolean available) {
+        isAvailable = available;
     }
 
     public Long getUserId() {
