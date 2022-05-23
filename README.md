@@ -15,5 +15,14 @@ Design Consideration
   7) To Do :: By default all the resources and user's availablity are set to true.
  
  Executing the application to findout project completion feasibility
+    
+    ProjectStartup.class has main method which accepts endDate as input in the format "dd/mm/yyyy"
+    the result can be obtained
+      by downloading the sourcecode
+      navigate to {yourpath}\ProjectManagementSystem\out\artifacts
+      Run the command as below
+          
+          sample -  "java -jar ProjectManagementSystem.jar 25/06/2022"
+          
  
  
