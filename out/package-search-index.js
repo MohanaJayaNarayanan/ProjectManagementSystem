@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"All Packages","url":"allpackages-index.html"},{"l":"com.solution"},{"l":"com.solution.enums"},{"l":"com.solution.model"},{"l":"com.solution.service"}]
