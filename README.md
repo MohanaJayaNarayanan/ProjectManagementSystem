@@ -17,10 +17,11 @@ Design Consideration
  Executing the application to findout project completion feasibility
     
     ProjectStartup.class has main method which accepts endDate as input in the format "dd/mm/yyyy"
-    the result can be obtained
-      by downloading the sourcecode
-      navigate to {yourpath}\ProjectManagementSystem\out\artifacts
-      Run the command as below
+    the result can be obtained by
+    
+      1)Download the sourcecode
+      2)Navigate to {yourpath}\ProjectManagementSystem\out\artifacts
+      3)Run the command as below
           
           sample -  "java -jar ProjectManagementSystem.jar 25/06/2022"
           
