@@ -9,6 +9,13 @@ public class User {
     UserType userType;
     Double salary;
 
+    public User(Long userId, String userName, UserType userType, Double salary) {
+        this.userId = userId;
+        this.userName = userName;
+        this.userType = userType;
+        this.salary = salary;
+    }
+
     public Long getUserId() {
         return userId;
     }
@@ -41,5 +48,13 @@ public class User {
         this.salary = salary;
     }
 
-
+    @Override
+    public String toString() {
+        return "User{" +
+                "userId=" + userId +
+                ", userName='" + userName + '\'' +
+                ", userType=" + userType +
+                ", salary=" + salary +
+                '}';
+    }
 }

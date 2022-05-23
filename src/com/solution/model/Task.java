@@ -16,8 +16,28 @@ public class Task {
     User user;
     Resource resource;
     Status taskStatus;
-    Integer taskOrder;
     List<String> dependencyTasks;
+    Long timeTaken;
+
+    public Task(Long taskId, String taskName, Status taskStatus, List<String> dependencyTasks, Long timeTaken) {
+        this.taskId = taskId;
+        this.taskName = taskName;
+        this.taskStatus = taskStatus;
+        this.dependencyTasks = dependencyTasks;
+        this.timeTaken = timeTaken;
+    }
+
+    public Task(String taskName) {
+        this.taskName = taskName;
+    }
+
+    public Long getTimeTaken() {
+        return timeTaken;
+    }
+
+    public void setTimeTaken(Long timeTaken) {
+        this.timeTaken = timeTaken;
+    }
 
     public Long getTaskId() {
         return taskId;
@@ -75,19 +95,6 @@ public class Task {
         this.taskStatus = taskStatus;
     }
 
-    public Integer getTaskOrder() {
-        return taskOrder;
-    }
-
-    public void setTaskOrder(Integer taskOrder) {
-        this.taskOrder = taskOrder;
-    }
-
-    public Task(String taskName, Integer taskOrder) {
-        this.taskName = taskName;
-        this.taskOrder = taskOrder;
-    }
-
     public List<String> getDependencyTasks() {
         return dependencyTasks;
     }
@@ -95,6 +102,7 @@ public class Task {
     public void setDependencyTasks(List<String> dependencyTasks) {
         this.dependencyTasks = dependencyTasks;
     }
+
 
     @Override
     public String toString() {
@@ -106,7 +114,8 @@ public class Task {
                 ", user=" + user +
                 ", resource=" + resource +
                 ", taskStatus=" + taskStatus +
-                ", taskOrder=" + taskOrder +
+                ", dependencyTasks=" + dependencyTasks +
+                ", timeTaken=" + timeTaken +
                 '}';
     }
 }
